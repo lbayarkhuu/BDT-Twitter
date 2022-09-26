@@ -1,0 +1,29 @@
+%flink.ssql(type=update)
+
+CREATE TABLE kinesistable (
+  `category` STRING,
+  `txt` STRING,
+  `date` STRING
+)
+WITH (
+  'connector' = 'kinesis',
+  'stream' = 'data-stream',
+  'aws.region' = 'us-east-1',
+  'scan.stream.initpos' = 'LATEST',
+  'format' = 'json'
+);
+
+--------
+
+%flink.ssql(type=update)
+
+
+SELECT * FROM kinesistable;
+
+---------
+
+%flink.ssql(type=update)
+
+SELECT COUNT(*), kinesistable.category
+FROM kinesistable
+GROUP BY kinesistable.category

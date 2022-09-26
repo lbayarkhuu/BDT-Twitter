@@ -1,0 +1,247 @@
+﻿{
+  "paragraphs": [
+    {
+      "text": "%flink.ssql\n-- ========== Kinesis ==========\n-- https://ci.apache.org/projects/flink/flink-docs-release-1.12/dev/table/connectors/kinesis.html\n\n-- CREATE TABLE `my_table` (\n--   `column1` STRING,\n--   `column2` BIGINT\n-- )\n-- WITH (\n--   'connector' = 'kinesis',\n--   'stream' = 'my_kinesis_stream',\n--   'aws.region' = 'kinesis-stream-aws-region',\n--   'scan.stream.initpos' = 'LATEST',\n--   'format' = 'csv'\n-- );\n\n-- ========== Kafka ==========\n-- https://ci.apache.org/projects/flink/flink-docs-release-1.11/dev/table/connectors/kafka.html\n\n-- CREATE TABLE my_table (\n--   `column1` STRING,\n--   `column2` BIGINT\n-- ) WITH (\n--   'connector' = 'kafka',\n--   'topic' = 'my_topic',\n--   'properties.bootstrap.servers' = 'kafka_broker_endpoint:9092',\n--   'properties.group.id' = 'myGroup',\n--   'scan.startup.mode' = 'earliest-offset',\n--   'format' = 'json'\n-- );",
+      "user": "anonymous",
+      "dateUpdated": "2022-09-25T20:32:17+0000",
+      "progress": 0,
+      "config": {
+        "colWidth": 12,
+        "fontSize": 9,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/sql",
+        "type": "update"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_example_create",
+      "id": "paragraph_example_create",
+      "dateCreated": "2022-09-25T20:32:17+0000",
+      "status": "READY",
+      "focus": true,
+      "$$hashKey": "object:137"
+    },
+    {
+      "text": "%flink.ssql(type=update)\n\nCREATE TABLE kinesistable (\n  `category` STRING,\n  `txt` STRING,\n  `date` STRING\n)\nWITH (\n  'connector' = 'kinesis',\n  'stream' = 'data-stream',\n  'aws.region' = 'us-east-1',\n  'scan.stream.initpos' = 'LATEST',\n  'format' = 'json'\n);",
+      "user": "anonymous",
+      "dateUpdated": "2022-09-25T20:49:26+0000",
+      "progress": 0,
+      "config": {
+        "colWidth": 12,
+        "fontSize": 9,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/sql",
+        "type": "update"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_example_select",
+      "id": "paragraph_example_select",
+      "dateCreated": "2022-09-25T20:32:17+0000",
+      "status": "FINISHED",
+      "$$hashKey": "object:138",
+      "dateFinished": "2022-09-25T20:49:27+0000",
+      "dateStarted": "2022-09-25T20:49:26+0000",
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "Table has been created.\n"
+          }
+        ]
+      }
+    },
+    {
+      "text": "%flink.ssql(type=update)\n\n\nSELECT * FROM kinesistable;",
+      "user": "anonymous",
+      "dateUpdated": "2022-09-25T20:50:23+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/sql",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "FLINK JOB",
+          "tooltip": "View in Flink web UI",
+          "group": "flink",
+          "values": [
+            {
+              "jobUrl": "/flinkdashboard/#/job/58bcb18d592640b98f237987c6c9d513",
+              "$$hashKey": "object:5309"
+            }
+          ],
+          "interpreterSettingId": "flink"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1664138546686_1855489273",
+      "id": "paragraph_1664138546686_1855489273",
+      "dateCreated": "2022-09-25T20:42:26+0000",
+      "status": "ABORT",
+      "focus": true,
+      "$$hashKey": "object:283",
+      "dateFinished": "2022-09-25T20:55:52+0000",
+      "dateStarted": "2022-09-25T20:50:23+0000",
+      "results": {
+        "code": "ERROR",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "category\ttxt\tdate\nC++\tRT @BarryRevzin: Does anyone have examples of C++ libraries that:  1. Have docs, 2. Those docs are (mostly) generated from the source, and…\tSun Sep 25 20:50:57 +0000 2022\nC++\tRT @theavalkyrie: One of the funniest things to me is Chromium's C++ style guide whose list of banned features is longer than the entire sp…\tSun Sep 25 20:51:07 +0000 2022\nC++\tNew post: C++ DEV Update - July edition https://t.co/g3GsJOteqt\tSun Sep 25 20:51:48 +0000 2022\nC++\tNew post: C++ DEV Update: Announcing Remix https://t.co/l3tnGx5cqk\tSun Sep 25 20:51:54 +0000 2022\nC++\tNew post: Ethereum DEV Update: C++ Roadmap https://t.co/nMKEI6RYf4\tSun Sep 25 20:51:58 +0000 2022\nC++\tNew post: Security alert [Implementation of BLOCKHASH instruction in C++ and Go clients can potentially cause https://t.co/orGQgClSwg\tSun Sep 25 20:52:06 +0000 2022\nC++\tRT @_r_netsec: Cpplumber 0.1.0 - Static analysis tool based on clang, which detects source-to-binary information leaks in C and C++ project…\tSun Sep 25 20:52:20 +0000 2022\nC++\tRT @hackwith_s: C++ mostly used in  Rn #ArtificialIntelligence #AI #ML #DataScience #DataScientists #CodeNewbies #Tech #deeplearning #Cyber…\tSun Sep 25 20:53:48 +0000 2022\nJava\tRT @ShadyWordPress:  God Sent Me To Elevate You ☁️ #100DaysOfCode #trendingkiiara #Python #IoT #IIoT #PyTorch #Ad #JavaScript #ReactJS #Wo…\tSun Sep 25 20:50:46 +0000 2022\nJava\tRT @ShadyWordPress:  God Sent Me To Elevate You ☁️ #100DaysOfCode #trendingkiiara #Python #IoT #IIoT #PyTorch #Ad #JavaScript #ReactJS #Wo…\tSun Sep 25 20:51:49 +0000 2022\nJava\tRT @DataScienceDojo: 💥 Java versus Python! Source: Skill Slash  #Java #Python #DataScience https://t.co/rBf0upwS0e\tSun Sep 25 20:51:52 +0000 2022\nJava\tRT @gp_pulipaka: Awesome R. #BigData #Analytics #DataScience #AI #MachineLearning #IoT #IIoT #PyTorch #Python #RStats #TensorFlow #Java #Ja…\tSun Sep 25 20:53:19 +0000 2022\nJava\tRT @gp_pulipaka: Awesome R. #BigData #Analytics #DataScience #AI #MachineLearning #IoT #IIoT #PyTorch #Python #RStats #TensorFlow #Java #Ja…\tSun Sep 25 20:53:20 +0000 2022\nJava\tRT @gp_pulipaka: Awesome R. #BigData #Analytics #DataScience #AI #MachineLearning #IoT #IIoT #PyTorch #Python #RStats #TensorFlow #Java #Ja…\tSun Sep 25 20:53:21 +0000 2022\nJava\tRT @MentorWebDev: What for what?  🖼️ Frontend →HTML + CSS →Javascript →React   →VueJs  →Angular →Svelte  🔙 Backend: →Nodejs →Python/Django…\tSun Sep 25 20:53:35 +0000 2022\nPython\tRT @KirkDBorne: Tiny #Python Projects — 21 small fun projects for Python beginners designed to build programming skill, teach new algorithm…\tSun Sep 25 20:50:44 +0000 2022\nPython\tRT @ShadyWordPress:  God Sent Me To Elevate You ☁️ #100DaysOfCode #trendingkiiara #Python #IoT #IIoT #PyTorch #Ad #JavaScript #ReactJS #Wo…\tSun Sep 25 20:50:46 +0000 2022\nPython\tRT @KirkDBorne: Tiny #Python Projects — 21 small fun projects for Python beginners designed to build programming skill, teach new algorithm…\tSun Sep 25 20:50:46 +0000 2022\nPython\tRT @ShadyWordPress:  Words Aren’t’ Fake Friends Are #Python #Roblox #IoT #Azure #PyTorch #100daysofcode #CPP #DeFi #ADA #Flutter #SQL #hip…\tSun Sep 25 20:51:06 +0000 2022\nPython\t@DataScienceDojo Why are you comparing Python with SQL?\tSun Sep 25 20:51:24 +0000 2022\nPython\tRT @gp_pulipaka: 10 Must-Read #MachineLearning  Articles (April — May, 2019). #BigData #Analytics #DataScience #AI #IoT #IIoT #Python #RSta…\tSun Sep 25 20:51:24 +0000 2022\nPython\tRT @driscollis: In #Python, function overloading is accomplished using `functools.singledispatch`.  You use `singledispatch` as a decorator…\tSun Sep 25 20:51:43 +0000 2022\nPython\tRT @gp_pulipaka: 10 Must-Read #MachineLearning  Articles (April — May, 2019). #BigData #Analytics #DataScience #AI #IoT #IIoT #Python #RSta…\tSun Sep 25 20:51:45 +0000 2022\nPython\tRT @ShadyWordPress:  God Sent Me To Elevate You ☁️ #100DaysOfCode #trendingkiiara #Python #IoT #IIoT #PyTorch #Ad #JavaScript #ReactJS #Wo…\tSun Sep 25 20:51:49 +0000 2022\nPython\tRT @DataScienceDojo: 💥 Java versus Python! Source: Skill Slash  #Java #Python #DataScience https://t.co/rBf0upwS0e\tSun Sep 25 20:51:52 +0000 2022\nPython\tRT @themis277: R for Data Science - Part 1 (English) https://t.co/bKuPPaMS2x #research #DataScience #MachineLearning #data #Rstats #Python…\tSun Sep 25 20:51:54 +0000 2022\nPython\tRT @mvollmer1: 💥What happens in 1 minute of internet 10.0!  #AI #MachineLearning #Web3 #NFTs #Website #Python #Coding #100DaysOfCode #Metav…\tSun Sep 25 20:51:56 +0000 2022\nPython\tRT @sonu_monika: #research Pubmed #ML &amp; deep Learning in #health  #healthcare #Algorithms #DataScience #Python #Programming #Cloud #AI #Ana…\tSun Sep 25 20:52:00 +0000 2022\nPython\tNu op KINK: Monty Python - Always Look On The Bright Side Of Life\tSun Sep 25 20:52:02 +0000 2022\nPython\tRT @SaveToNotion: Top 10 Threads of the week 📈  Learn about Chrome, Cursos, Jobs, Websites, Datascience, Journaling, Dev, Python, Systemdes…\tSun Sep 25 20:52:02 +0000 2022\nPython\tRT @amankk_9: Here's a list of 20 Python practice questions for coding interviews with solutions https://t.co/hqAcn2gkRW  #python #pythonpr…\tSun Sep 25 20:52:02 +0000 2022\nPython\tRT @prins_ebuka: I think Python is like a bae. u need to dedicate attention and patience😂  #python\tSun Sep 25 20:52:35 +0000 2022\nPython\tRT @driscollis: You can register multiple data types to a single function using `functools.singledispatch` in #Python https://t.co/tiYZPXya…\tSun Sep 25 20:52:38 +0000 2022\nPython\tRT @prins_ebuka: I think Python is like a bae. u need to dedicate attention and patience😂  #python\tSun Sep 25 20:52:40 +0000 2022\nPython\tRT @driscollis: You can register multiple data types to a single function using `functools.singledispatch` in #Python https://t.co/tiYZPXya…\tSun Sep 25 20:52:40 +0000 2022\nPython\tRT @tutor_Adrian01: Who needs help with their #essaypay #Assignments #homework #Exams #Onlineclass #Online #research paper #Quiz #Python  #…\tSun Sep 25 20:52:58 +0000 2022\nPython\tQuality work and timely delivery; Exams #Onlineclass #Finalpaper Maths Finance Economics Calculus English Python La… https://t.co/tuLx8AT8j5\tSun Sep 25 20:53:08 +0000 2022\nPython\tRT @gp_pulipaka: Awesome R. #BigData #Analytics #DataScience #AI #MachineLearning #IoT #IIoT #PyTorch #Python #RStats #TensorFlow #Java #Ja…\tSun Sep 25 20:53:19 +0000 2022\nPython\tRT @gp_pulipaka: Awesome R. #BigData #Analytics #DataScience #AI #MachineLearning #IoT #IIoT #PyTorch #Python #RStats #TensorFlow #Java #Ja…\tSun Sep 25 20:53:20 +0000 2022\nPython\tRT @gp_pulipaka: Awesome R. #BigData #Analytics #DataScience #AI #MachineLearning #IoT #IIoT #PyTorch #Python #RStats #TensorFlow #Java #Ja…\tSun Sep 25 20:53:21 +0000 2022\nPython\t@Bonecondor 😂 crypto &amp; financial twitter is def beyond Monty Python, far beyond, that's for sure 💖\tSun Sep 25 20:53:32 +0000 2022\nPython\tRT @MentorWebDev: What for what?  🖼️ Frontend →HTML + CSS →Javascript →React   →VueJs  →Angular →Svelte  🔙 Backend: →Nodejs →Python/Django…\tSun Sep 25 20:53:35 +0000 2022\nPython\tAt first, I thought that the LA Times Article was a Month Python script...\tSun Sep 25 20:53:38 +0000 2022\nPython\tRT @teamfrance420: Snap:bedo420fr_ce #Quebec #DataScience #AppleEvent  #Cybersecurity #BigData #Annecy_live #Python #PokemonScarletandviole…\tSun Sep 25 20:53:42 +0000 2022\nPython\tRT @pyquantnews: 20 Python libraries for market data everyone should know:\tSun Sep 25 20:53:46 +0000 2022\nPython\tHow to insert a node in a binary search tree?  #Algorithms #DataStructures #Programming #Python  #BinaryTrees… https://t.co/WcHOTPadN3\tSun Sep 25 20:53:54 +0000 2022\nPython\tRT @KirkDBorne: Excellent book from @PacktPublishing now available &gt;&gt; \"Hands-On Data Preprocessing in #Python\" at https://t.co/mUCO99QqB6 b…\tSun Sep 25 20:53:54 +0000 2022\n"
+          },
+          {
+            "type": "TEXT",
+            "data": "Fail to run sql command: SELECT * FROM kinesistable\n"
+          },
+          {
+            "type": "ANGULAR",
+            "data": "<div class='container ng-scope' style='padding-left:0px;padding-right:0px;'>\n    <div class='panel panel-danger'>\n        <div class='panel-heading' ng-click='isOpen=!isOpen' ng-init='isOpen=false' style=\"cursor:pointer\">\n            <div class='plainTextContainer' style='font-weight:bolder'><i class=\"fa fa-caret-right fa-fw\" style=\"padding-right:7px;transition:all 0.3s;{{isOpen?'transform:rotate(90deg);transform-origin:25% 45%':''}}\"></i>Job was cancelled.</div>\n        </div>\n        <div class='panel-collapse' uib-collapse='!isOpen'>\n            <div class='text' style='max-height:300px;overflow:auto;padding:10px'>java.io.IOException: Fail to run stream sql job\n\tat org.apache.zeppelin.flink.sql.AbstractStreamSqlJob.run(AbstractStreamSqlJob.java:172)\n\tat org.apache.zeppelin.flink.sql.AbstractStreamSqlJob.run(AbstractStreamSqlJob.java:105)\n\tat org.apache.zeppelin.flink.FlinkStreamSqlInterpreter.callInnerSelect(FlinkStreamSqlInterpreter.java:89)\n\tat org.apache.zeppelin.flink.FlinkSqlInterrpeter.callSelect(FlinkSqlInterrpeter.java:503)\n\tat org.apache.zeppelin.flink.FlinkSqlInterrpeter.callCommand(FlinkSqlInterrpeter.java:266)\n\tat org.apache.zeppelin.flink.FlinkSqlInterrpeter.runSqlList(FlinkSqlInterrpeter.java:160)\n\tat org.apache.zeppelin.flink.FlinkSqlInterrpeter.internalInterpret(FlinkSqlInterrpeter.java:112)\n\tat org.apache.zeppelin.interpreter.AbstractInterpreter.interpret(AbstractInterpreter.java:47)\n\tat org.apache.zeppelin.interpreter.LazyOpenInterpreter.interpret(LazyOpenInterpreter.java:110)\n\tat org.apache.zeppelin.interpreter.remote.RemoteInterpreterServer$InterpretJob.jobRun(RemoteInterpreterServer.java:852)\n\tat org.apache.zeppelin.interpreter.remote.RemoteInterpreterServer$InterpretJob.jobRun(RemoteInterpreterServer.java:744)\n\tat org.apache.zeppelin.scheduler.Job.run(Job.java:172)\n\tat org.apache.zeppelin.scheduler.AbstractScheduler.runJob(AbstractScheduler.java:132)\n\tat org.apache.zeppelin.scheduler.ParallelScheduler.lambda$runJobInScheduler$0(ParallelScheduler.java:46)\n\tat java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)\n\tat java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)\n\tat java.base/java.lang.Thread.run(Thread.java:829)\nCaused by: org.apache.flink.client.program.ProgramInvocationException: Job failed (JobID: 58bcb18d592640b98f237987c6c9d513)\n\tat org.apache.flink.client.deployment.ClusterClientJobClientAdapter.lambda$getJobExecutionResult$6(ClusterClientJobClientAdapter.java:125)\n\tat java.base/java.util.concurrent.CompletableFuture$UniApply.tryFire(CompletableFuture.java:642)\n\tat java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:506)\n\tat java.base/java.util.concurrent.CompletableFuture.complete(CompletableFuture.java:2073)\n\tat org.apache.flink.runtime.concurrent.FutureUtils.lambda$retryOperationWithDelay$9(FutureUtils.java:394)\n\tat java.base/java.util.concurrent.CompletableFuture.uniWhenComplete(CompletableFuture.java:859)\n\tat java.base/java.util.concurrent.CompletableFuture$UniWhenComplete.tryFire(CompletableFuture.java:837)\n\tat java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:506)\n\tat java.base/java.util.concurrent.CompletableFuture.complete(CompletableFuture.java:2073)\n\tat org.apache.flink.client.program.rest.RestClusterClient.lambda$pollResourceAsync$24(RestClusterClient.java:670)\n\tat java.base/java.util.concurrent.CompletableFuture.uniWhenComplete(CompletableFuture.java:859)\n\tat java.base/java.util.concurrent.CompletableFuture$UniWhenComplete.tryFire(CompletableFuture.java:837)\n\tat java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:506)\n\tat java.base/java.util.concurrent.CompletableFuture.complete(CompletableFuture.java:2073)\n\tat org.apache.flink.runtime.concurrent.FutureUtils.lambda$retryOperationWithDelay$9(FutureUtils.java:394)\n\tat java.base/java.util.concurrent.CompletableFuture.uniWhenComplete(CompletableFuture.java:859)\n\tat java.base/java.util.concurrent.CompletableFuture$UniWhenComplete.tryFire(CompletableFuture.java:837)\n\tat java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:506)\n\tat java.base/java.util.concurrent.CompletableFuture.postFire(CompletableFuture.java:610)\n\tat java.base/java.util.concurrent.CompletableFuture$UniCompose.tryFire(CompletableFuture.java:1085)\n\tat java.base/java.util.concurrent.CompletableFuture$Completion.run(CompletableFuture.java:478)\n\t... 3 more\nCaused by: org.apache.flink.runtime.client.JobCancellationException: Job was cancelled.\n\tat org.apache.flink.runtime.jobmaster.JobResult.toJobExecutionResult(JobResult.java:146)\n\tat org.apache.flink.client.deployment.ClusterClientJobClientAdapter.lambda$getJobExecutionResult$6(ClusterClientJobClientAdapter.java:123)\n\t... 23 more\n</div>\n        </div>\n    </div>\n</div>\n"
+          }
+        ]
+      }
+    },
+    {
+      "text": "%flink.ssql(type=update)\n\nSELECT COUNT(*), kinesistable.category\nFROM kinesistable\nGROUP BY kinesistable.category",
+      "user": "anonymous",
+      "dateUpdated": "2022-09-25T20:56:06+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/sql",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "FLINK JOB",
+          "tooltip": "View in Flink web UI",
+          "group": "flink",
+          "values": [
+            {
+              "jobUrl": "/flinkdashboard/#/job/26943871164a9d6adb4f2418e12ef9ab",
+              "$$hashKey": "object:5843"
+            }
+          ],
+          "interpreterSettingId": "flink"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1664139005060_877509031",
+      "id": "paragraph_1664139005060_877509031",
+      "dateCreated": "2022-09-25T20:50:05+0000",
+      "status": "RUNNING",
+      "focus": true,
+      "$$hashKey": "object:459",
+      "dateFinished": "2022-09-25T20:55:53+0000",
+      "dateStarted": "2022-09-25T20:56:06+0000",
+      "results": {
+        "msg": [
+          {
+            "data": "EXPR$0\tcategory\n1\tC++\n4\tJava\n6\tPython\n",
+            "type": "TABLE"
+          }
+        ]
+      }
+    },
+    {
+      "text": "%flink.ssql\n",
+      "user": "anonymous",
+      "dateUpdated": "2022-09-25T20:55:11+0000",
+      "progress": 0,
+      "config": {
+        "colWidth": 12,
+        "fontSize": 9,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1664139311965_433258270",
+      "id": "paragraph_1664139311965_433258270",
+      "dateCreated": "2022-09-25T20:55:11+0000",
+      "status": "READY",
+      "focus": true,
+      "$$hashKey": "object:4297"
+    }
+  ],
+  "name": "Examples",
+  "id": "C7TRFPTOT",
+  "defaultInterpreterGroup": "flink",
+  "version": "0.9.0-rc1-kda1",
+  "noteParams": {},
+  "noteForms": {},
+  "angularObjects": {},
+  "config": {
+    "isZeppelinNotebookCronEnable": false,
+    "looknfeel": "default",
+    "personalizedMode": "false"
+  },
+  "info": {},
+  "path": "/Examples"
+}
